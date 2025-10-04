@@ -1,9 +1,9 @@
-// scripts/deploy.ts
+import { network } from "hardhat";
 
 async function main() {
-  // Menggunakan require("hardhat") adalah cara paling andal 
-  // untuk mendapatkan 'ethers' di dalam skrip tanpa error TypeScript.
-  const { ethers } = require("hardhat");
+  // Cara baru untuk mendapatkan 'ethers' di Hardhat 3,
+  // sesuai dengan file contoh test/Counter.ts di proyek Anda.
+  const { ethers } = await network.connect();
 
   const HelloWorld = await ethers.getContractFactory("HelloWorld");
 
